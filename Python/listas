@@ -1,0 +1,74 @@
+import sys
+
+
+# def main(args):
+	# matriz=[]
+	# for i in range(3):
+		# matriz.append([])
+		# for j in range(4):
+			# dato=input(f"Introduzca el elemento {i},{j}: ")
+			# matriz[i].append(dato)
+	# print(matriz)
+	
+	
+	
+	
+		
+# lista1=['Filosofia','Física','historia','Latín','Mates']	
+# for i in range(len(lista1)):
+	# print(lista1[i])	
+	
+	
+	
+# lista2=['Filosofia','Física','historia','Latín','Mates']
+# for asignatura2 in lista1:
+	# print(asignatura2
+	
+	
+	
+	
+# lista3=['Filosofia','Física','Historia','Latín','Mates']
+# milistaordenada1=sorted(lista3)
+# print(milistaordenada1)
+
+
+
+
+
+# asignaturas=[]
+# for i in range(4):
+	# asignatura = input(f"Introduce la asignatura {i}: ")
+	# asignaturas.append(asignatura)
+# ordenada = sorted(asignaturas)
+# print(ordenada)
+
+
+
+
+
+# listatupla = [('TIC II','10'),('Inglés','4'),('Mates','8,7'),('Filosofia','6,5'),('Historia','7')]
+
+# for i in range (5):
+	# print(listatupla[i
+	
+	
+	
+	
+	
+# from operator import itemgetter
+
+# listatupla = [('TIC II','10'),('Inglés','4'),('Mates','8,7'),('Filosofia','6,5'),('Historia','7')]
+
+# # for i in range (5):
+	# # listatuplaor = sorted(listatupla,key=itemgetter(1),reverse=True)
+	# # print(listatupla[i])
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    sys.exit()
