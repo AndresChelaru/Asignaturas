@@ -12,20 +12,20 @@ import sys
 	
 	
 	
-	
+#0.1	
 		
 # lista1=['Filosofia','Física','historia','Latín','Mates']	
 # for i in range(len(lista1)):
 	# print(lista1[i])	
 	
-	
+#0.2
 	
 # lista2=['Filosofia','Física','historia','Latín','Mates']
 # for asignatura2 in lista1:
 	# print(asignatura2
 	
 	
-	
+#1	
 	
 # lista3=['Filosofia','Física','Historia','Latín','Mates']
 # milistaordenada1=sorted(lista3)
@@ -33,7 +33,7 @@ import sys
 
 
 
-
+#2
 
 # asignaturas=[]
 # for i in range(4):
@@ -44,31 +44,65 @@ import sys
 
 
 
-
+#3
 
 # listatupla = [('TIC II','10'),('Inglés','4'),('Mates','8,7'),('Filosofia','6,5'),('Historia','7')]
 
 # for i in range (5):
 	# print(listatupla[i
+
+
+
+#4	
 	
-	
-	
+#key=lambda x: float(x[1]): Convierte el segundo elemento (la nota)
+#a float para que la ordenación sea numérica, no alfabética.
+#Sin esta conversión, el orden se haría de acuerdo al orden lexicográfico de las cadenas, lo que no es lo que se busca.	
 	
 	
 # from operator import itemgetter
 
-# listatupla = [('TIC II','10'),('Inglés','4'),('Mates','8,7'),('Filosofia','6,5'),('Historia','7')]
+# listatupla = [('TIC II','10'),('Inglés','4'),('Mates','8.7'),('Filosofia','6.5'),('Historia','7')]
 
-# # for i in range (5):
-	# # listatuplaor = sorted(listatupla,key=itemgetter(1),reverse=True)
-	# # print(listatupla[i])
+# listatuplaor = sorted(listatupla, key=lambda x: float(x[1]),reverse=True)
 
-
-
+# for asignatura in listatuplaor:
+	# print(asignatura)
 
 
+#5
 
 
+# from operator import itemgetter
+
+# listatupla=[]
+
+# for i in range(5):
+	# asignatura=input("Introduce la asignatura: ")
+	# nota=input("Introduce la nota: ")
+	# listatupla.append((asignatura, nota))
+
+# listatuplaor=sorted(listatupla,key=lambda x: float(x[1]),reverse=True)
+
+# for asignaturas in listatuplaor:
+	# print(asignaturas)
+
+
+#6
+
+listatupla=[]
+listatuplasus=[]
+
+for i in range(5):
+	asignatura=input("Introduce la asignatura: ")
+	nota=input("Introduce la nota: ")
+	listatupla.append((asignatura, nota))
+	if listatupla[1] <5 and listatupla[1]>0:
+		listatuplasus.append((asignatura,nota))
+	
+listatuplaor=sorted(listatuplasus,key=lambda x: float(x[1]),reverse=True)
+for asignaturas in listatuplaor:
+	print(asignaturas)
 
 if __name__ == '__main__':
     sys.exit()
