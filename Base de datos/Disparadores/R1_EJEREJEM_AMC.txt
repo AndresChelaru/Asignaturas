@@ -1,0 +1,22 @@
+delimiter ::
+
+CREATE TRIGGER validar_actualizar
+BEFORE INSERT ON lineapedido
+FOR EACH ROW
+BEGIN
+	DECLARE stock_disponible INT;
+	SELECT enAlamacen INTO stock_disponible
+	FROM productos
+	WHERE codPtoducto = NEW.codProducto;
+
+	IF NEW.cantidad > stock_disponible
+	THEN SIGNAL SQLSTATE '45000'
+	SET MESSAGE_TEXT = 'No hay suficiente en stock';
+	END IF;
+	
+	UPDATE productos
+	SET importe = importe + NEW.cantidad * NEW.precio
+	WHERE numeroPedido = NEW.numeroPedido;
+END IF ;
+END ::
+delimiter ;

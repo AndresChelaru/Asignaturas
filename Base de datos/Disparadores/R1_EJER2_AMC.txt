@@ -1,0 +1,15 @@
+<-- En este caso añadir antes la columna "importe"-->
+ALTER TABLE lineapedido ADD COLUMN importe DECIMAL(10,2);
+
+delimiter ::
+CREATE TRIGGER actualizar_importe
+AFTER INSERT
+ON lineapedido FOR EACH ROW
+BEGIN
+	UPDATE pedidos
+	SET importe = importe + NEW.cantidad * NEW.precio
+	WHERE numeroPedido = NEW.numeroPedido
+END IF ;
+END ::
+
+delimiter ;

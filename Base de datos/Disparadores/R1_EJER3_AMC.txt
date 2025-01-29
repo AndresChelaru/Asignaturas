@@ -1,0 +1,13 @@
+delimiter ::
+
+CREATE TRIGGER actualizar_productos
+AFTER INSERT ON lineapedido
+FOR EACH ROW
+BEGIN
+	UPDATE productos
+	SET enAlmacen = enAlmacen - NEW.cantidad
+	WHERE codProducto = NEW.codProducto;
+END ;
+END ::
+
+delimiter ;

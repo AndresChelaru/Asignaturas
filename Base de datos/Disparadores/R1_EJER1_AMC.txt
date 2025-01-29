@@ -1,0 +1,20 @@
+delimiter ::
+CREATE TRIGGER comprobar_stock
+BEFORE INSERT
+ON lineapedido FOR EACH ROW
+BEGIN
+	DECLARE en_almacen INT;
+	
+	SELECT productosEnAlmacen
+	INTO en_almacen
+	FROM productos
+	WHERE codProducto = NEW.codProducto;
+
+	IF NEW.cantidad > enAlmacen
+	THEN SIGNAL SQLSTATE '45000'
+	SET MESSAGE_TEXT = 'No quedan suficientes unidades en stock';
+END ;
+
+END IF ::
+
+delimiter ;	
