@@ -1,0 +1,23 @@
+DELIMITER ::
+CREATE FUNCTION PedidosAnuales(año INT)
+RETURNS VARCHAR(100)
+DETERMINISTIC
+BEGIN
+	DECLARE mensaje VARCHAR(100);
+	DECLARE num_pedidos INT;
+
+	SELECT COUNT(*) INTO num_pedidos
+	FROM pedidos
+	WHERE YEAR(fechaPedido) = año;
+
+	IF num_pedidos < 100 THEN
+    	SET mensaje = 'Menos de 100 pedidos';
+	ELSEIF num_pedidos BETWEEN 100 AND 150 THEN
+    	SET mensaje = 'Entre 100 y 150 pedidos';
+	ELSE
+    	SET mensaje = 'Más de 150 pedidos';
+	END IF;
+    
+	RETURN mensaje;
+END::
+DELIMITER ;

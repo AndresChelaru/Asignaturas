@@ -1,0 +1,17 @@
+DELIMITER ::
+
+CREATE FUNCTION modificar_importe ()  
+RETURNS VOID
+DETERMINISTIC
+BEGIN
+   UPDATE pedidos
+   JOIN (
+ 	SELECT numeroPedido, SUM(importe) AS importesuma
+ 	FROM lineapedido
+ 	GROUP BY numeroPedido
+   ) AS t
+   ON pedidos.numeroPedido = t.numeroPedido
+   SET pedidos.importe = importesuma
+END ::
+
+DELIMITER ;

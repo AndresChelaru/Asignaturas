@@ -1,0 +1,23 @@
+DELIMITER ::
+
+CREATE FUNCTION pedidos_cancelados()
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+	DECLARE resultado INT;
+	DECLARE cancelados VARCHAR(20);
+
+	SELECT COUNT(*) INTO resultado
+	FROM pedidos
+	WHERE estado = 'Cancelado';
+
+	IF resultado = 0 THEN
+    	SET cancelados = 'no';
+	ELSE
+    	SET cancelados = 'si';
+	END IF;
+
+	RETURN cancelados;
+END ::
+
+DELIMITER ;

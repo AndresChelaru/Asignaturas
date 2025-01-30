@@ -1,0 +1,17 @@
+DELIMITER ::
+
+CREATE FUNCTION pedidos_en_fecha(fecha DATE)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+	DECLARE num_pedidos INT;
+
+
+	SELECT COUNT(*) INTO num_pedidos
+	FROM pedidos
+	WHERE fechaPedido = fecha;
+
+	RETURN num_pedidos;
+END ::
+
+DELIMITER ;
