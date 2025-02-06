@@ -1,0 +1,13 @@
+ El volumen de la unidad D es Nuevo vol
+ El n£mero de serie del volumen es: B28F-C9F2
+
+ Directorio de D:\Casa\Asignaturas\Python\Python para administradores
+
+06/02/2025  18:02    <DIR>          .
+06/02/2025  18:02    <DIR>          ..
+06/02/2025  18:02                 0 lista_archivos.txt
+04/02/2025  18:40             3.011 R1_ER_AMC.py
+06/02/2025  17:43             1.179 R3_E5_AMC.py
+06/02/2025  18:02               651 R3_E6_AMC.py
+               4 archivos          4.841 bytes
+               2 dirs  377.260.437.504 bytes libres
